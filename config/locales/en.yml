@@ -27,6 +27,11 @@ en:
       article_category:
         description: Description
         name: Name
+      article_price:
+        deposit: Deposit
+        price: Price (net)
+        tax: VAT
+        unit_quantity: Unit quantity
       delivery:
         delivered_on: Delivery date
         note: Note
@@ -73,6 +78,7 @@ en:
         starts: Starts at
         status: Status
       order_article:
+        article: Article
         missing_units: Missing units
         missing_units_short: Missing
         units_to_order: Amount of units
@@ -610,12 +616,6 @@ en:
       show:
         back: Back
         title: Invoice %{number}
-    order_articles:
-      edit:
-        stock_alert: The price of stock articles cannot be changed!
-        title: Update article
-      new:
-        title: Add delivered article to order
     ordergroups:
       index:
         new_transaction: Add new transactions
@@ -1082,6 +1082,12 @@ en:
     model:
       error_single_group: ! '%{user} is already a member of another ordergroup'
       invalid_balance: is not a valid number
+  order_articles:
+    edit:
+      stock_alert: The price of stock articles cannot be changed!
+      title: Update article
+    new:
+      title: Add delivered article to order
   orders:
     add_article:
       title: Add article
@@ -1372,6 +1378,8 @@ en:
       title: Copy stock article
     create:
       notice: New stock article "%{name}" was created.
+    derive:
+      title: Add stock article using template
     destroy:
       notice: Article %{name} was deleted.
     edit:

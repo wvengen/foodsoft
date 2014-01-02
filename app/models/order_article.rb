@@ -199,14 +199,15 @@ class OrderArticle < ActiveRecord::Base
   private
   
   def article_and_price_exist
-     errors.add(:article, I18n.t('model.order_article.error_price')) if !(article = Article.find(article_id)) || article.fc_price.nil?
+    errors.add(:article, I18n.t('model.order_article.error_price')) if !(article = Article.find(article_id)) || article.fc_price.nil?
+  rescue
+    errors.add(:article, I18n.t('model.order_article.error_price'))
   end
 
   # Associate with current article price if created in a finished order
   def init_from_balancing
     if order.present? and order.finished?
       self.article_price = article.article_prices.first
-      self.units_to_order = 1
     end
   end
 

@@ -27,6 +27,11 @@ de:
       article_category:
         description: Beschreibung
         name: Name
+      article_price:
+        deposit: Pfand
+        price: Nettopreis
+        tax: MwSt
+        unit_quantity: Gebindegröße
       delivery:
         delivered_on: Lieferdatum
         note: Notiz
@@ -73,6 +78,7 @@ de:
         starts: Läuft vom
         status: Status
       order_article:
+        article: Artikel
         missing_units: Fehlende Einheiten
         missing_units_short: Fehlende
         units_to_order: Menge
@@ -606,12 +612,6 @@ de:
       show:
         back: Züruck
         title: Rechnung %{number}
-    order_articles:
-      edit:
-        stock_alert: Preise von Lagerartikeln können nicht geändert werden!
-        title: Artikel aktualisieren
-      new:
-        title: Neuer gelieferter Artikel die Bestellung
     ordergroups:
       index:
         new_transaction: Neue Überweisungen eingeben
@@ -1078,6 +1078,12 @@ de:
     model:
       error_single_group: ! '%{user} ist schon in einer anderen Bestellgruppe'
       invalid_balance: ist keine gültige Zahl
+  order_articles:
+    edit:
+      stock_alert: Preise von Lagerartikeln können nicht geändert werden!
+      title: Artikel aktualisieren
+    new:
+      title: Neuer gelieferter Artikel der Bestellung
   orders:
     articles:
       article_count: ! 'Bestellte Artikel:'
@@ -1361,6 +1367,8 @@ de:
       title: Lagerartikel kopieren
     create:
       notice: Neuer Lagerartikel »%{name}« gespeichert.
+    derive:
+      title: Lagerartikel aus Vorlage erstellen
     destroy:
       notice: Artikel %{name} gelöscht.
     edit:

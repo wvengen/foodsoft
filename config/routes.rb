@@ -41,8 +41,12 @@ Foodsoft::Application.routes.draw do
 
         get :receive
         post :receive
-        get :add_article
+        
+        get :receive_on_order_article_create
+        get :receive_on_order_article_update
       end
+
+      resources :order_articles
     end
 
     resources :group_orders do
@@ -145,9 +149,10 @@ Foodsoft::Application.routes.draw do
           get :confirm
           put :close
           put :close_direct
+          
+          get :new_on_order_article_create
+          get :new_on_order_article_update
         end
-
-        resources :order_articles
       end
 
       resources :group_order_articles do

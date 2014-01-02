@@ -27,6 +27,11 @@ nl:
       article_category:
         description: Omschrijving
         name: Naam
+      article_price:
+        deposit: Statiegeld
+        price: Netto prijs
+        tax: BTW
+        unit_quantity: Groothandelseenheid
       delivery:
         delivered_on: Leverdatum
         note: Notitie
@@ -73,6 +78,7 @@ nl:
         starts: Start op
         status: Status
       order_article:
+        article: Artikel
         missing_units: Missende eenheden
         missing_units_short: Nodig
         units_to_order: Aantal eenheden
@@ -610,12 +616,6 @@ nl:
       show:
         back: Terug
         title: Factuur %{number}
-    order_articles:
-      edit:
-        stock_alert: De prijs van voorraadartikelen kan niet aangepast worden!
-        title: Artikel bijwerken
-      new:
-        title: Geleverd artikel aan bestelling toevoegen
     ordergroups:
       index:
         new_transaction: Nieuwe transacties toevoegen
@@ -1062,6 +1062,12 @@ nl:
     model:
       error_single_group: ! '%{user} behoort al tot een ander huishouden'
       invalid_balance: is geen geldig nummer
+  order_articles:
+    edit:
+      stock_alert: De prijs van voorraadartikelen kan niet aangepast worden!
+      title: Artikel bijwerken
+    new:
+      title: Geleverd artikel aan bestelling toevoegen
   orders:
     articles:
       article_count: ! 'Bestelde artikelen:'

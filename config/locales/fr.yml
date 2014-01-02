@@ -27,6 +27,11 @@ fr:
       article_category:
         description: Description
         name: Nom
+      article_price:
+        deposit: Consigne
+        price: Prix net
+        tax: TVA
+        unit_quantity: Unités par lot
       delivery:
         delivered_on: Date de réapprovisionnement
         note: 
@@ -73,6 +78,7 @@ fr:
         starts: Ouverture le
         status: 
       order_article:
+        article: Article
         missing_units: Unités manquantes
         missing_units_short: 
         units_to_order: Quantité
@@ -620,12 +626,6 @@ fr:
       show:
         back: Retour
         title: Facture %{number}
-    order_articles:
-      edit:
-        stock_alert: 
-        title: Mettre à jour la liste des article
-      new:
-        title: 
     ordergroups:
       index:
         new_transaction: Saisir une nouvelle transaction
@@ -1087,6 +1087,12 @@ fr:
     model:
       error_single_group: ! '%{user} fait déjà partie d''une autre cellule'
       invalid_balance: n'est pas un nombre valide
+  order_articles:
+    edit:
+      stock_alert: 
+      title: Mettre à jour la liste des article
+    new:
+      title: 
   orders:
     articles:
       article_count: ! 'Articles commandés:'
