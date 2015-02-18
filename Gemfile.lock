@@ -30,6 +30,12 @@ GIT
     ice_cube (0.12.1)
 
 PATH
+  remote: plugins/documents
+  specs:
+    foodsoft_documents (0.0.1)
+      rails
+
+PATH
   remote: plugins/messages
   specs:
     foodsoft_messages (0.0.1)
@@ -476,6 +482,7 @@ DEPENDENCIES
   exception_notification
   factory_girl_rails
   faker
+  foodsoft_documents!
   foodsoft_messages!
   foodsoft_wiki!
   haml-rails
