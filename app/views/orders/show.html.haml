@@ -1,5 +1,9 @@
 - title t('.title', name: @order.name)
 
+- content_for :actionbar do
+  - if FoodsoftMessages.enabled?
+    = link_to_new_message message_params: {order_id: @order.id}
+
 .well
   %button{type: "button", class: "close", data: {dismiss: 'alert'}}= t('ui.marks.close').html_safe
   %p
