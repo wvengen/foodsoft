@@ -1,4 +1,9 @@
 en:
+  config:
+    hints:
+      use_documents: Add a basic document sharing page to the foodcoop menu.
+    keys:
+      use_documents: Enable documents
   navigation:
     documents: Documents
   documents:
@@ -10,6 +15,7 @@ en:
       no_right: You do not have enough rights to delete the document
       notice: Document was deleted
     index:
+      new: Upload new document
       title: Documents
     new:
       title: New Document

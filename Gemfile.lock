@@ -33,6 +33,7 @@ PATH
   remote: plugins/documents
   specs:
     foodsoft_documents (0.0.1)
+      deface (~> 1.0.0)
       rails
 
 PATH

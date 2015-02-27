@@ -1,6 +1,4 @@
 class DocumentsController < ApplicationController
-  inherit_resources
-
   before_filter -> { require_plugin_enabled FoodsoftDocuments }
 
   def index
@@ -51,6 +49,6 @@ class DocumentsController < ApplicationController
 
   def show
     @document = Document.find(params[:id])
-    send_data(@document.content, :filename => @document.name, :type => MIME::Types.type_for(@document.name).first.content_type)
+    send_data(@document.content, :filename => @document.name, :type => @document.content_type || 'application/octet-stream')
   end
 end
