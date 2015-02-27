@@ -11,9 +11,5 @@ module FoodsoftDocuments
         sub_nav.items.insert(i, sub_nav.items.delete_at(-1))
       end
     end
-
-    def default_foodsoft_config(cfg)
-      cfg[:use_documents] = true
-    end
   end
 end
