@@ -1,3 +1,5 @@
+require 'decorators'
+
 module FoodsoftForum
   class Engine < ::Rails::Engine
     def navigation(primary, context)
@@ -15,6 +17,10 @@ module FoodsoftForum
 
     def default_foodsoft_config(cfg)
       cfg[:use_forum] = true
+    end
+
+    initializer 'load decorators' do
+      Decorators.register! root
     end
   end
 end
