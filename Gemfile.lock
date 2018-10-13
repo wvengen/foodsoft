@@ -37,6 +37,12 @@ PATH
       rails
 
 PATH
+  remote: plugins/shop
+  specs:
+    foodsoft_shop (0.1.0)
+      rails
+
+PATH
   remote: plugins/wiki
   specs:
     foodsoft_wiki (0.0.1)
@@ -528,6 +534,7 @@ DEPENDENCIES
   foodsoft_discourse!
   foodsoft_documents!
   foodsoft_messages!
+  foodsoft_shop!
   foodsoft_wiki!
   gaffe
   haml (~> 4.0)
@@ -583,4 +590,4 @@ DEPENDENCIES
   whenever
 
 BUNDLED WITH
-   1.15.4
+   1.16.1
