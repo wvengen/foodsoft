@@ -179,6 +179,10 @@ GEM
       rails (>= 4.0.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    graphiql-rails (1.5.0)
+      railties
+      sprockets-rails
+    graphql (1.8.11)
     grease (0.3.1)
     haml (4.0.7)
       tilt
@@ -521,6 +525,8 @@ DEPENDENCIES
   foodsoft_messages!
   foodsoft_wiki!
   gaffe
+  graphiql-rails
+  graphql (~> 1.8.0)
   haml (~> 4.0)
   haml-rails
   i18n-js (~> 3.0.0.rc8)

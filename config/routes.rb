@@ -1,16 +1,20 @@
 Foodsoft::Application.routes.draw do
-
   get "order_comments/new"
 
   get "comments/new"
 
   get "sessions/new"
 
+  # @todo allow specifying foodcoop in GraphiQL UI
+  mount GraphiQL::Rails::Engine, at: '/graphiql', graphql_path: '/f/graphql' if Rails.env.development?
+
   root to: 'sessions#redirect_to_foodcoop', as: nil
 
   scope '/:foodcoop' do
 
     use_doorkeeper
+
+    post '/graphql', to: 'graphql#execute'
 
     # Root path
     root to: 'home#index'

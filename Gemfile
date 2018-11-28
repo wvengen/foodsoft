@@ -33,6 +33,7 @@ gem 'doorkeeper'
 gem 'doorkeeper-i18n'
 gem 'rack-cors', require: 'rack/cors'
 gem 'active_model_serializers', '~> 0.10.0'
+gem 'graphql', '~> 1.8.0'
 gem 'twitter-bootstrap-rails', '~> 2.2.8'
 gem 'simple-navigation', '~> 3.14.0' # 3.x for simple_navigation_bootstrap
 gem 'simple-navigation-bootstrap'
@@ -91,6 +92,7 @@ group :development do
 end
 
 group :development, :test do
+  gem 'graphiql-rails'
   gem 'ruby-prof', require: false
 end
 
