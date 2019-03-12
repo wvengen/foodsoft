@@ -230,31 +230,24 @@ class Order < ApplicationRecord
     end
   end
 
-  # Sets order.status to 'close' and updates all Ordergroup.account_balances
+  # Sets order.status to 'closed' and updates all {Ordergroup.account_balance}s
   def close!(user, transaction_type = nil)
     raise I18n.t('orders.model.error_closed') if closed?
-    transaction_note = I18n.t('orders.model.notice_close', :name => name,
-                              :ends => ends.strftime(I18n.t('date.formats.default')))
 
-    gos = group_orders.includes(:ordergroup)              # Fetch group_orders
-    gos.each { |group_order| group_order.update_price! }  # Update prices of group_orders
+    update_price_of_group_orders
 
-    transaction do                                        # Start updating account balances
-      for group_order in gos
-        if group_order.ordergroup
-          price = group_order.price * -1                  # decrease! account balance
-          group_order.ordergroup.add_financial_transaction!(price, transaction_note, user, transaction_type)
+    transaction do
+      charge_group_orders!(user)
+
+      if stockit?
+        # Update {OrderArticle#units_to_order} and decrease the quantity of {StockArticle}s
+        order_articles.includes(:article).find_each do |oa|
+          oa.update_results!
+          stock_changes.create! stock_article: oa.article, quantity: oa.units_to_order * -1
         end
       end
 
-      if stockit?                                         # Decreases the quantity of stock_articles
-        for oa in order_articles.includes(:article)
-          oa.update_results!                              # Update units_to_order of order_article
-          stock_changes.create! :stock_article => oa.article, :quantity => oa.units_to_order*-1
-        end
-      end
-
-      self.update_attributes! :state => 'closed', :updated_by => user, :foodcoop_result => profit
+      update_attributes! state: 'closed', updated_by: user, foodcoop_result: profit
     end
   end
 
@@ -331,10 +324,23 @@ class Order < ApplicationRecord
 
   private
 
-  # Updates the "price" attribute of GroupOrders or GroupOrderResults
+  # Updates the "price" attribute of {GroupOrder}s or GroupOrderResults
   # This will be either the maximum value of a current order or the actual order value of a finished order.
   def update_price_of_group_orders
-    group_orders.each { |group_order| group_order.update_price! }
+    group_orders.find_each { |group_order| group_order.update_price! }
+  end
+
+  def charge_group_orders!(user)
+    group_orders.includes(:ordergroup).find_each do |group_order|
+      price = group_order.price * -1 # decrease! account balance
+      group_order.ordergroup.add_financial_transaction!(price, transaction_note, user, transaction_type)
+    end
+  end
+
+  def transaction_note
+    @transaction_note ||= begin
+      I18n.t('orders.model.notice_close', name: name, ends: ends.strftime(I18n.t('date.formats.default')))
+    end
   end
 
 end
