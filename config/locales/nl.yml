@@ -186,7 +186,9 @@ nl:
       order: Bestelling
       order_article: Bestellingsartikel
       order_comment: Commentaar
-      ordergroup: Huishouden
+      ordergroup:
+        one: Ordergroup
+        other: Ordergroups
       stock_article: Voorraadartikel
       stock_taking: Inventaris
       supplier: Leverancier
@@ -318,7 +320,7 @@ nl:
       unit_quantity_short: Colli
     controller:
       create_from_upload:
-        notice: Er zijn %{count} nieuwe artikelen opgeslagen.
+        notice: 'Er zijn %{count} nieuwe artikelen opgeslagen.'
       error_invalid: Er zijn artikelen die een fout hebben
       error_nosel: Geen artikelen geselecteerd
       error_parse: '%{msg} ... in regel %{line}'
@@ -344,7 +346,7 @@ nl:
       note: 'Verplichte velden zijn: Naam, eenheid, (netto) prijs en bestellingsnummer.'
       submit: Alle artikelen bijwerken
       title: Alle artikelen van %{supplier} bewerken
-      warning: Let op, alle artikelen worden bijgewerkt!
+      warning: 'Let op, alle artikelen worden bijgewerkt!'
     form:
       title_edit: Artikel bewerken
       title_new: Nieuw artikel toevoegen
@@ -393,7 +395,7 @@ nl:
         title: Bijwerken ...
         update_msg:
           one: Er moet éen artikel bijgewerkt worden.
-          other: Er moeten %{count} artikelen bijgewerkt worden.
+          other: 'Er moeten %{count} artikelen bijgewerkt worden.'
     upload:
       body: <p>Het bestand moet een utf-8 tekstbestand zijn met als extensie '.csv'. De eerste regel wordt overgeslagen.</p> <p>Velden moeten met een puntkomma (';') gescheiden worden, en tekst mag tussen dubbele aanhalingstekstens ("Tekst...") staan.</p> <p>Volgende van de kolommen:</p>
       fields:
@@ -401,7 +403,7 @@ nl:
         status: Status (x=overslaan)
       file_label: Graag een compatibel bestand uitkiezen
       submit: Bestand uploaden
-      title: Artikelen uploaden voor %{supplier}
+      title: 'Artikelen uploaden voor %{supplier}'
   deliveries:
     add_stock_change:
       how_many_units: 'Hoeveel eenheden (%{unit}) leveren? Voorraadartikel: %{name}.'
@@ -420,7 +422,7 @@ nl:
       title_select_stock_articles: 1. Kies voorraadartikelen
     index:
       confirm_delete: Zeker weten?
-      new_delivery: Nieuwe levering maken voor %{supplier}
+      new_delivery: 'Nieuwe levering maken voor %{supplier}'
       title: '%{supplier} leveringen'
     invoice_amount: Factuurbedrag
     invoice_net_amount: Netto factuurbedrag
@@ -446,47 +448,47 @@ nl:
     order_by_articles:
       filename: Bestelling %{name}-%{date} - Artikellijst
       rows:
-      - Huishouden
-      - Besteld
-      - Ontvangen
-      - Prijs
+        - Huishouden
+        - Besteld
+        - Ontvangen
+        - Prijs
       title: 'Artikellijst van bestelling: %{name}, gesloten op %{date}'
     order_by_groups:
       filename: Bestelling %{name}-%{date} - Huishoudenslijst
       rows:
-      - Artikel
-      - Besteld
-      - Gekregen
-      - Prijs
-      - Colli
-      - Eenheid
-      - Som
+        - Artikel
+        - Besteld
+        - Gekregen
+        - Prijs
+        - Colli
+        - Eenheid
+        - Som
       sum: Som
       title: 'Huishoudenslijst van bestelling: %{name}, gesloten op %{date}'
     order_fax:
       filename: Bestelling %{name}-%{date} - Fax
       rows:
-      - Nummer
-      - Aantal
-      - Naam
-      - Colli
-      - Eenheid
-      - Prijs/eenh.
-      - Subtotaal
+        - Nummer
+        - Aantal
+        - Naam
+        - Colli
+        - Eenheid
+        - Prijs/eenh.
+        - Subtotaal
       total: Totaal
     order_matrix:
       filename: Bestelling %{name}-%{date} - Sorteermatrix
       heading: Artikeloverzicht
       rows:
-      - Artikel
-      - Eenheid
-      - Gr.Eenh.
-      - Foodcoop-prijs
-      - Aantal
+        - Artikel
+        - Eenheid
+        - Gr.Eenh.
+        - Foodcoop-prijs
+        - Aantal
       title: 'Sorteermatrix van bestelling: %{name}, gesloten op %{date}'
       total:
         one: In totaal éen artikel
-        other: In totaal %{count} artikelen
+        other: 'In totaal %{count} artikelen'
   errors:
     general: Er is een probleem opgetreden.
     general_again: Er is een fout opgetreden. Probeer het opnieuw.
@@ -735,7 +737,7 @@ nl:
       sum: Som
       title: Jouw bestelling voor %{order}
     switch_order:
-      remaining: nog %{remaining}
+      remaining: 'nog %{remaining}'
       title: Lopende bestellingen
     update:
       error_general: Er is een probleem opgetreden, de bestelling kon niet bijgewerkt worden.
@@ -767,13 +769,11 @@ nl:
       message:
         create: bericht versturen
     tasks:
-      required_users: Nog %{count} leden nodig!
+      required_users: 'Nog %{count} leden nodig!'
       task_title: '%{name} (%{duration}u)'
   home:
     apple_bar:
-      desc: |-
-        Deze balk laat zien hoeveel taken je gedaan hebt per bestelhoeveelheid, vergeleken met het gemiddelde van de foodcoop.
-        Praktisch: voor iedere %{amount} aan totale bestellingen moet je een taak te doen!
+      desc: "Deze balk laat zien hoeveel taken je gedaan hebt per bestelhoeveelheid, vergeleken met het gemiddelde van de foodcoop.\nPraktisch: voor iedere %{amount} aan totale bestellingen moet je een taak te doen!"
       more_info: Meer informatie
       points: 'Appelpuntenstand: %{points}'
       warning: Opgelet, als je minder dan %{threshold} appelpunten hebt, kun je geen bestelling plaatsen!
@@ -856,7 +856,7 @@ nl:
       confirm_change: Als je naar een andere bestelling gaat, gaan je aanpassingen in deze bestelling verloren. Wijzigingen vergeten en naar de andere bestelling gaan?
   layouts:
     email:
-      footer_1_separator: --
+      footer_1_separator: '--'
       footer_2_foodsoft: 'Foodsoft: %{url}'
       footer_3_homepage: 'Foodcoop: %{url}'
       footer_4_help: 'Help: %{url}'
@@ -905,7 +905,7 @@ nl:
       subject: Feedback van %{email}
     invite:
       subject: Uitnodiging voor de foodcoop
-      text: |-
+      text: |
         Hallo!
 
         %{user} <%{mail}> heeft je uitgenodigd om deel te worden van de groep "%{group}".
@@ -915,7 +915,7 @@ nl:
         Groeten van de foodcoop.
     negative_balance:
       subject: Negatief tegoed
-      text: |-
+      text: |
         Beste %{group},
 
         Je tegoed is onder nul gekomen op %{when}: %{balance}
@@ -928,7 +928,7 @@ nl:
         Hartlijke groet van %{foodcoop}.
     not_enough_users_assigned:
       subject: '"%{task}" heeft nog mensen nodig!'
-      text: |-
+      text: |
         Beste %{user},
 
         De taak '%{task}' van jouw werkgroep op %{when} kan nog iemand gebruiken!
@@ -954,7 +954,7 @@ nl:
         Vriendelijke groet van %{foodcoop}.
     reset_password:
       subject: Nieuw wachtwoord voor %{username}
-      text: |-
+      text: |
         Beste %{user},
 
         Jij (of iemand anders) heeft een nieuw wachtwoord aangevraagd voor het foodcoop ordersysteem.
@@ -966,11 +966,11 @@ nl:
     upcoming_tasks:
       nextweek: 'Taken voor komende week:'
       subject: Er is een taak te doen!
-      text0: |-
+      text0: |
         Beste %{user},
 
         Je bent opgegeven voor "%{task}". Deze taak is morgen te vervullen (%{when})!
-      text1: |-
+      text1: |
         Mijn taken: %{user_tasks_url}
 
         Groeten van %{foodcoop}.
@@ -1006,7 +1006,7 @@ nl:
       title: Bericht lezen
   messages_mailer:
     foodsoft_message:
-      footer: |-
+      footer: |
         Antwoorden: %{reply_url}
         Bericht online lezen: %{msg_url}
         Berichtinstellingen: %{profile_url}
@@ -1176,7 +1176,7 @@ nl:
     update_order_amounts:
       msg1: '%{count} artikelen (%{units} eenheden) bijgewerkt'
       msg2: '%{count} (%{units}) naar tolerantie'
-      msg3: 
+      msg3: '%{count} (%{units}) go to stock if foodsoft would support that [don''t translate]'
       msg4: '%{count} (%{units}) overgebleven'
   pages:
     all:
@@ -1326,7 +1326,7 @@ nl:
         settings_group:
           messages: Berichten
           privacy: Privacy
-    'no': Nee
+    'no': 'Nee'
     options:
       settings:
         profile:
@@ -1338,7 +1338,7 @@ nl:
     required:
       mark: '*'
       text: verplicht
-    'yes': Ja
+    'yes': 'Ja'
   stock_takings:
     create:
       notice: Inventaris is opgenomen.
