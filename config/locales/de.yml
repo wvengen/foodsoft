@@ -129,7 +129,7 @@ de:
         fax: FAX
         is_subscribed: abonniert?
         min_order_quantity: Mindestbestellmenge
-        min_order_quantity_short: 
+        min_order_quantity_short: Min. quantity
         name: Name
         note: Notiz
         order_howto: Howto Bestellen
@@ -186,7 +186,9 @@ de:
       order: Bestellung
       order_article: Bestell-Artikel
       order_comment: Kommentar
-      ordergroup: Bestellgruppe
+      ordergroup:
+        one: Ordergroup
+        other: Ordergroups
       stock_article: Lagerartikel
       stock_taking: Inventur
       supplier: Lieferant
@@ -318,7 +320,7 @@ de:
       unit_quantity_short: GebGr
     controller:
       create_from_upload:
-        notice: Es wurden %{count} neue Artikel gespeichert.
+        notice: 'Es wurden %{count} neue Artikel gespeichert.'
       error_invalid: Artikel sind fehlerhaft
       error_nosel: Du hast keine Artikel ausgewählt
       error_parse: '%{msg} ... in Zeile %{line}'
@@ -344,7 +346,7 @@ de:
       note: 'Pflichtfelder sind: Name, Einheit, (netto) Preis und Bestellnummer.'
       submit: Alle Artikel aktualisieren
       title: Alle Artikel von %{supplier} bearbeiten
-      warning: Achtung, alle Artikel werden aktualisiert!
+      warning: 'Achtung, alle Artikel werden aktualisiert!'
     form:
       title_edit: Artikel bearbeiten
       title_new: Neuen Artikel einfügen
@@ -404,7 +406,7 @@ de:
       title: '%{supplier} / Artikel hochladen'
   deliveries:
     add_stock_change:
-      how_many_units: Wie viele Einheiten (%{unit}) des Artikels »%{name}« liefern?
+      how_many_units: 'Wie viele Einheiten (%{unit}) des Artikels »%{name}« liefern?'
     create:
       notice: Lieferung wurde erstellt. Bitte nicht vergessen die Rechnung anzulegen!
     destroy:
@@ -420,7 +422,7 @@ de:
       title_select_stock_articles: 1. Lagerartikel auswählen
     index:
       confirm_delete: Bist Du sicher?
-      new_delivery: Neue Lieferung für %{supplier} anlegen
+      new_delivery: 'Neue Lieferung für %{supplier} anlegen'
       title: '%{supplier}/Lieferungen'
     invoice_amount: Rechnungsbetrag
     invoice_net_amount: bereinigter Rechnungsbetrag
@@ -446,47 +448,47 @@ de:
     order_by_articles:
       filename: Bestellung %{name}-%{date} - Artikelsortierung
       rows:
-      - Bestellgruppe
-      - Bestellt
-      - Bekommen
-      - Preis
+        - Bestellgruppe
+        - Bestellt
+        - Bekommen
+        - Preis
       title: 'Artikelsortierung der Bestellung: %{name}, beendet am %{date}'
     order_by_groups:
       filename: Bestellung %{name}-%{date} - Gruppensortierung
       rows:
-      - Artikel
-      - Bestellt
-      - Bekommen
-      - Preis
-      - GebGr
-      - Einheit
-      - Summe
+        - Artikel
+        - Bestellt
+        - Bekommen
+        - Preis
+        - GebGr
+        - Einheit
+        - Summe
       sum: Summe
       title: 'Gruppensortierung der Bestellung: %{name}, beendet am %{date}'
     order_fax:
       filename: Bestellung %{name}-%{date} - Fax
       rows:
-      - BestellNr.
-      - Menge
-      - Name
-      - Gebinde
-      - Einheit
-      - Preis/Einheit
-      - Summe
+        - BestellNr.
+        - Menge
+        - Name
+        - Gebinde
+        - Einheit
+        - Preis/Einheit
+        - Summe
       total: Gesamtpreis
     order_matrix:
       filename: Bestellung %{name}-%{date} - Sortiermatrix
       heading: Artikelübersicht
       rows:
-      - Artikel
-      - Einheit
-      - Gebinde
-      - FC-Preis
-      - Menge
+        - Artikel
+        - Einheit
+        - Gebinde
+        - FC-Preis
+        - Menge
       title: 'Sortiermatrix der Bestellung: %{name}, beendet am %{date}'
       total:
         one: Insgesamt ein Artikel
-        other: Insgesamt %{count} Artikel
+        other: 'Insgesamt %{count} Artikel'
   errors:
     general: Ein Problem ist aufgetreten.
     general_again: Ein Fehler ist aufgetreten. Bitte erneut versuchen.
@@ -735,7 +737,7 @@ de:
       sum: Summe
       title: Dein Bestellergebnis für %{order}
     switch_order:
-      remaining: noch %{remaining}
+      remaining: 'noch %{remaining}'
       title: Laufende Bestellungen
     update:
       error_general: Die Bestellung konnte nicht aktualisiert werden, da ein Fehler auftrat.
@@ -767,7 +769,7 @@ de:
       message:
         create: Nachricht verschicken
     tasks:
-      required_users: Es fehlen %{count} Mitstreiterinnen!
+      required_users: 'Es fehlen %{count} Mitstreiterinnen!'
       task_title: '%{name} (%{duration}h)'
   home:
     apple_bar:
@@ -854,7 +856,7 @@ de:
       confirm_change: Änderungen an dieser Bestellung gehen verloren, wenn zu einer anderen Bestellung gewechselt wird. Möchtest Du trotzdem wechseln?
   layouts:
     email:
-      footer_1_separator: --
+      footer_1_separator: '--'
       footer_2_foodsoft: 'Foodsoft: %{url}'
       footer_3_homepage: 'Foodcoop: %{url}'
       footer_4_help: 'Hilfe: %{url}'
@@ -944,10 +946,16 @@ de:
 
         die Bestelling für "%{order}" wurde am %{when} von %{user} beendet.
         Für Euch wurden die folgenden Artikel bestellt:
-      text1: "o Gesamtpreis: %{sum}\n\nBestelling unline einsehen: %{order_url}\n\n\nViele Grüße von %{foodcoop} "
+      text1: |-
+        o Gesamtpreis: %{sum}
+
+        Bestelling unline einsehen: %{order_url}
+
+
+        Viele Grüße von %{foodcoop} 
     reset_password:
       subject: Neues Password für %{username}
-      text: |-
+      text: |
         Hallo %{user},
 
         du (oder jemand anderes) hat auf der Foodsoft-Website ein neues Passwort angefordert.
@@ -1129,7 +1137,7 @@ de:
       rest_to_stock: Rest ins Lager
       submit: Bestellung in Empfang nehmen
       surplus_options: 'Verteilungsoptionen:'
-      title: »%{order}« in Empfang nehmen
+      title: '»%{order}« in Empfang nehmen'
     show:
       action_end: Beenden!
       amounts: 'Netto/Bruttosumme:'
@@ -1172,7 +1180,7 @@ de:
     update_order_amounts:
       msg1: '%{count} Artikel (%{units} Einheiten) aktualisiert'
       msg2: '%{count} (%{units}) Toleranzmenge'
-      msg3: 
+      msg3: '%{count} (%{units}) go to stock if foodsoft would support that [don''t translate]'
       msg4: '%{count} (%{units}) übrig'
   pages:
     all:
@@ -1229,7 +1237,7 @@ de:
     show:
       date_format: '%d.%m.%y %H:%M'
       delete: Seite löschen
-      delete_confirm: Achtung, auch alle Unterseiten werden gelöscht. Bist Du sicher?
+      delete_confirm: 'Achtung, auch alle Unterseiten werden gelöscht. Bist Du sicher?'
       edit: Seite bearbeiten
       last_updated: Zuletzt bearbeitet von <b>%{user}</b> am %{when}
       subpages: Unterseiten
@@ -1322,7 +1330,7 @@ de:
         settings_group:
           messages: Nachrichten
           privacy: Privatsphäre
-    'no': Nein
+    'no': 'Nein'
     options:
       settings:
         profile:
@@ -1334,7 +1342,7 @@ de:
     required:
       mark: '*'
       text: benötigt
-    'yes': Ja
+    'yes': 'Ja'
   stock_takings:
     create:
       notice: Inventur wurde erfolgreich angelegt.

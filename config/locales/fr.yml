@@ -15,7 +15,7 @@ fr:
         manufacturer: ProductRICE_eur
         name: Nom
         note: Note
-        order_number: 'Numéro '
+        order_number: Numéro 
         order_number_short: Numéro
         origin: Lieu de production
         price: Prix net
@@ -186,7 +186,9 @@ fr:
       order: Commande
       order_article: Article à commander
       order_comment: Commentaire
-      ordergroup: Cellule
+      ordergroup:
+        one: Ordergroup
+        other: Ordergroups
       stock_article: l'article à ajouter au cellier
       stock_taking: Inventaire
       supplier: FournisseusE_r
@@ -344,7 +346,7 @@ fr:
       note: 'Les champs obligatoires sont: le nom, l''unité, le prix net et le numéro de commande.'
       submit: Mettre à jour tous les articles
       title: Modifier tous les articles de %{supplier}
-      warning: Attention, tous les articles sont en train d'être mis à jour!
+      warning: 'Attention, tous les articles sont en train d''être mis à jour!'
     form:
       title_edit: Modifier cet article
       title_new: Ajouter un nouvel article
@@ -372,9 +374,7 @@ fr:
       error_in_use: '%{article} ne peut pas être supprimé car il fait partie d''une liste de commande en cours!'
       error_nosel: Aucun article n'a été sélectionné
     parse_upload:
-      body: |-
-        <p><i>Merci de vérifier les articles importés.</i></p>
-        <p><i>Attention, les doublons ne sont pas automatiquement détectés.</p></i>.
+      body: "<p><i>Merci de vérifier les articles importés.</i></p>\n<p><i>Attention, les doublons ne sont pas automatiquement détectés.</p></i>."
       submit: Téléverser
       title: Téléverser des articles
     sync:
@@ -397,10 +397,7 @@ fr:
           one: Un article doit être mis à jour.
           other: '%{count} articles doivent être mis à jour.'
     upload:
-      body: |-
-        <p>Le fichier doit être au format texte et son nom doit se terminer par l'extension ".csv". La première ligne sera ignorée lors de l'importation.</p>
-        <p>Les champs doivent être délimités par des points-virgules (';'), et le texte compris entre guillemets ("texte...")</p>
-        <p>L'encodage du fichier doit être UTF-8. L'ordre des colonnes est:</p>
+      body: "<p>Le fichier doit être au format texte et son nom doit se terminer par l'extension \".csv\". La première ligne sera ignorée lors de l'importation.</p>\n<p>Les champs doivent être délimités par des points-virgules (';'), et le texte compris entre guillemets (\"texte...\")</p>\n<p>L'encodage du fichier doit être UTF-8. L'ordre des colonnes est:</p>"
       fields:
         reserved: (Reservé)
         status: Statut (x=exclu)
@@ -409,7 +406,7 @@ fr:
       title: '%{supplier} / Transférer les données sur l''article'
   deliveries:
     add_stock_change:
-      how_many_units: Combien d'unités (%{unit}) de l'article %{name} doivent-elles être livrées?
+      how_many_units: 'Combien d''unités (%{unit}) de l''article %{name} doivent-elles être livrées?'
     create:
       notice: Le réapprovisionnement a bien a été défini. Attention à ne pas oublier de déposer la facture correspondante!
     destroy:
@@ -425,7 +422,7 @@ fr:
       title_select_stock_articles: 1. Choisir les articles dans le cellier
     index:
       confirm_delete: T'es sûrE de ton coup?
-      new_delivery: Réapprovisionner le cellier par %{supplier}
+      new_delivery: 'Réapprovisionner le cellier par %{supplier}'
       title: '%{supplier}/Réapprovisionnements'
     invoice_amount: Montant de la facture
     invoice_net_amount: Montant net de la facture
@@ -451,43 +448,43 @@ fr:
     order_by_articles:
       filename: Commande %{name}-%{date} - Trier par
       rows:
-      - Cellule
-      - 
-      - Quantité
-      - Prix
+        - Cellule
+        - Ordered
+        - Quantité
+        - Prix
       title: 'Ordre des articles pour la commande: %{name}, close le %{date}'
     order_by_groups:
       filename: Commande %{name}-%{date} - Répartition par cellules
       rows:
-      - Nom de l'article
-      - Commandée
-      - Quantité
-      - Prix unitaire
-      - Unités par lot
-      - Unité
-      - Prix total
+        - Nom de l'article
+        - Commandée
+        - Quantité
+        - Prix unitaire
+        - Unités par lot
+        - Unité
+        - Prix total
       sum: prix total
       title: 'Répartition par cellules pour la commande: %{name}, close le %{date}'
     order_fax:
       filename: Commande %{name}-%{date} - Fax
       rows:
-      - Numéro
-      - Quantité
-      - Nom
-      - Nombre de lots
-      - Unité
-      - Prix/Unité
-      - Prix unitaire
+        - Numéro
+        - Quantité
+        - Nom
+        - Nombre de lots
+        - Unité
+        - Prix/Unité
+        - Prix unitaire
       total: Total
     order_matrix:
       filename: Commande %{name}-%{date} - Tableau de répartition
       heading: Liste des articles
       rows:
-      - Article
-      - Unité
-      - Nombre de lots
-      - Prix coop
-      - Quantité
+        - Article
+        - Unité
+        - Nombre de lots
+        - Prix coop
+        - Quantité
       title: 'Tableau de répartition pour la commande: %{name}; close le %{date}'
       total:
         one: Un seul article
@@ -501,9 +498,7 @@ fr:
       notice: Ton commentaire a été transmis avec succès. Merci
     new:
       first_paragraph: Tu as trouvé une erreur? Tu as une proposition, une idée, une critique? Envoie un commentaire!
-      second_paragraph: |-
-        Petite remarque: l'équipe de Foodsoft s'occupe seulement de la maintenance du logiciel.
-        Pour les questions concernants l'organisation de ta boufcoop, il faut contacter les personnes concernées.
+      second_paragraph: "Petite remarque: l'équipe de Foodsoft s'occupe seulement de la maintenance du logiciel.\nPour les questions concernants l'organisation de ta boufcoop, il faut contacter les personnes concernées."
       send: Transmettre
       title: Laisser un commentaire
   finance:
@@ -538,9 +533,9 @@ fr:
         invoice_number: 'Numéro de la facture:'
         minus_refund_calculated: 'Prix de la consigne:'
         new: Saisir une nouvelle facture
-        new_body: Ajouter une facture pour cette commande
-        plus_refund_credited: Remboursement de la consigne
-        refund_adjusted_amount: Montant recalculé en excluant les consignes
+        new_body: 'Ajouter une facture pour cette commande'
+        plus_refund_credited: 'Remboursement de la consigne'
+        refund_adjusted_amount: 'Montant recalculé en excluant les consignes'
       new:
         alert: Attention, cette commande a déjà été décomptée
         articles_overview: Aperçu des articles
@@ -656,9 +651,7 @@ fr:
         title: Cellules
     users:
       index:
-        body: |-
-          <p>Cette page sert à envoyer des messages aux autres membres de la coop.</p>
-          <p>Si tu veux que tes coordonnées soient visibles par les autres, il faut le spécifier dans tes %{profile_link}. </p>
+        body: "<p>Cette page sert à envoyer des messages aux autres membres de la coop.</p>\n<p>Si tu veux que tes coordonnées soient visibles par les autres, il faut le spécifier dans tes %{profile_link}. </p>"
         ph_name: Nom ...
         ph_ordergroup: Cellule ...
         profile_link: préférences
@@ -669,9 +662,7 @@ fr:
         invite_new: Tu peux engrainer de nouveaux membres %{invite_link}.
         title: Modifier cette équipe
       index:
-        body: |-
-          <p>Seuls les membres d'une équipe peuvent la modifier.</p>
-          <p>Tu peux rejoindre une équipe en contactant un de ses membres.</p>
+        body: "<p>Seuls les membres d'une équipe peuvent la modifier.</p>\n<p>Tu peux rejoindre une équipe en contactant un de ses membres.</p>"
         title: Équipes
       workgroup:
         edit: Modifier la cellule
@@ -721,9 +712,7 @@ fr:
         title: Crédit
       title: Aperçu des commandes
     messages:
-      not_enough_apples: |-
-        Il faut que ta cellule ait au moins %{stop_ordering_under} glands pour pouvoir commander,
-        alors que vous n'en avez que %{apples} pour le moment.
+      not_enough_apples: "Il faut que ta cellule ait au moins %{stop_ordering_under} glands pour pouvoir commander,\nalors que vous n'en avez que %{apples} pour le moment."
     order:
       title: Article
     show:
@@ -748,7 +737,7 @@ fr:
       sum: Total
       title: Ta part de la commande %{order}
     switch_order:
-      remaining: encore %{remaining}
+      remaining: 'encore %{remaining}'
       title: Commandes en cours
     update:
       error_general: Suite à une erreur, la commande n'a pu être mise à jour.
@@ -780,19 +769,14 @@ fr:
       message:
         create: Envoyer un message
     tasks:
-      required_users: Il manque encore %{count} camarades!
+      required_users: 'Il manque encore %{count} camarades!'
       task_title: '%{name} (%{duration}h)'
   home:
     apple_bar:
-      desc: |-
-        Ce système de glands sert à comparer la durée du travail collectif auquel ta cellule a contribué (rapportée à la quantité commandée) avec
-        la moyenne du travail effectué par toutes les cellules.
-        Actuellement, cette moyenne est d'une heure de boulot pour %{amount} commandés.
+      desc: "Ce système de glands sert à comparer la durée du travail collectif auquel ta cellule a contribué (rapportée à la quantité commandée) avec\nla moyenne du travail effectué par toutes les cellules.\nActuellement, cette moyenne est d'une heure de boulot pour %{amount} commandés."
       more_info: Plus d'informations
       points: 'Nombre de glands: %{points}'
-      warning: |-
-        Attention, si ta cellule a moins de %{threshold} glands, tu ne pourras plus commander!
-        (ce seuil est fixé par la coop)
+      warning: "Attention, si ta cellule a moins de %{threshold} glands, tu ne pourras plus commander!\n(ce seuil est fixé par la coop)"
     changes_saved: Les modifications ont été sauvegardées.
     index:
       due_date_format: '%A, %d. %b'
@@ -872,7 +856,7 @@ fr:
       confirm_change: Les changements apportés à cette commande vont être perdus. Est-ce que tu veux vraiment continuer?
   layouts:
     email:
-      footer_1_separator: --
+      footer_1_separator: '--'
       footer_2_foodsoft: 'Foodsoft: %{url}'
       footer_3_homepage: 'Boufcoop: %{url}'
       footer_4_help: 'Aide: %{url}'
@@ -893,12 +877,7 @@ fr:
       page: page %{number}
   login:
     accept_invitation:
-      body: |
-        <p>Tu viens d'être invité à rejoindre la cellule "<b>%{group}</b>" de la coopérative d'approvisionnement (bouffe-coop) %{foodcoop} ! </p>
-        <p>Remplis ce formulaire si tu es d'accord pour être de la partie.</p>
-        <p>Ces données ne seront en aucun cas publiées, ou transmises à quiconque d'extérieur à la coop.
-        Pour des raisons techniques, les membres de la coop qui s'occupent du site internet ont accès aux données,
-        mais en ce qui concerne les autres membres de la coop, tu pourras choisir quelles données leurs sont visibles.
+      body: "<p>Tu viens d'être invité à rejoindre la cellule \"<b>%{group}</b>\" de la coopérative d'approvisionnement (bouffe-coop) %{foodcoop} ! </p>\n<p>Remplis ce formulaire si tu es d'accord pour être de la partie.</p>\n<p>Ces données ne seront en aucun cas publiées, ou transmises à quiconque d'extérieur à la coop.\nPour des raisons techniques, les membres de la coop qui s'occupent du site internet ont accès aux données,\nmais en ce qui concerne les autres membres de la coop, tu pourras choisir quelles données leurs sont visibles."
       submit: Créer un compte Foodsoft
       title: Invitation chez les %{name}
     controller:
@@ -908,14 +887,11 @@ fr:
       error_invite_invalid: Ton invitation n'est pas ou plus valide.
       error_token_invalid: Ton jeton de connexion n'est pas ou plus valide, essaie de cliquer à nouveau sur le lien.
       reset_password:
-        notice: 'Tu vas maintenant recevoir un message contenant un lien qui te permettra de réinitialiser ton mot de passe. '
+        notice: Tu vas maintenant recevoir un message contenant un lien qui te permettra de réinitialiser ton mot de passe. 
       update_password:
         notice: Ton mot de passe a été mis à jour. Tu peux maintenant de connecter.
     forgot_password:
-      body: |-
-        <p>Pas de problème, nous pouvons générer un nouveau mot de passe pour toi.</p>
-        <p>Pour cela, commence par saisir ci-dessous l'adresse email que tu as donné lors de ton inscription.
-        Tu recevras ensuite un message avec de plus amples instructions.</p>
+      body: "<p>Pas de problème, nous pouvons générer un nouveau mot de passe pour toi.</p>\n<p>Pour cela, commence par saisir ci-dessous l'adresse email que tu as donné lors de ton inscription.\nTu recevras ensuite un message avec de plus amples instructions.</p>"
       submit: Demander un nouveau mot de passe
       title: Mot de passe oublié?
     new_password:
@@ -929,14 +905,14 @@ fr:
       subject: Retour de %{email}
     invite:
       subject: Invitation à participer à une Bouffecoop
-      text: |-
+      text: |
         Salut!
         %{user} <%{mail}> vient de t'engrainer à rejoindre la cellule "%{group}".
         Pour accepter cet engrenage et ainsi faire partie de notre Boufcoop, visite: %{link}
         Ce lien ne sera valide que pour une seule visite et s'autodétruira le %{expires}.
     negative_balance:
       subject: Compte dans le rouge!
-      text: |-
+      text: |
         CherEs %{group},
 
         Votre compte sur la bouffecoop est passé au rouge le %{when}, et son solde actuel est %{balance}.
@@ -945,7 +921,7 @@ fr:
 
         Message automatisé de %{foodcoop}
     not_enough_users_assigned:
-      subject: Il y a encore besoin de monde pour "%{task}"
+      subject: 'Il y a encore besoin de monde pour "%{task}"'
       text: |
         CherE %{user},
 
@@ -956,7 +932,7 @@ fr:
         Pour voir ton agenda complet: %{user_tasks_url}
     order_result:
       subject: 'Commande close: %{name}'
-      text0: |-
+      text0: |
         CherEs %{ordergroup},
 
         La commande pour "%{order}" a été finalisée le %{when} par %{user}.
@@ -968,7 +944,7 @@ fr:
         Message envoyé automatiquement par %{foodcoop}
     reset_password:
       subject: Nouveau mot de passe pour %{username}
-      text: |-
+      text: |
         Salut %{user},
 
         Toi (ou quelqu'un d'autre) vient de demander un nouveau mot de passe sur le site de la bouffecoop.
@@ -984,7 +960,7 @@ fr:
         CherE %{user},
 
         Tu t'es inscritE pour le boulot "%{task}", qui aura lieu demain (%{when}).
-      text1: |-
+      text1: |
         Ton agenda: %{user_tasks_url}
 
         Ceci est un rappel automatisé envoyé par %{foodcoop}.
@@ -1002,12 +978,12 @@ fr:
       reply_subject: 'Re: %{subject}'
     new:
       list:
-        desc: Pour envoyer un message à tout le monde, passe par la mailing list "%{list}"
+        desc: 'Pour envoyer un message à tout le monde, passe par la mailing list "%{list}"'
         mail: par exemple en envoyant un email à %{email}
         subscribe: Pour plus d'explications concernant la mailing list, consulte le %{link}
         subscribe_msg: Il faudra peut être d'abord t'inscrire à la mailing list.
         wiki: wiki (section mailing list)
-      no_user_found: 'AucunE membre correspondantE n''a été trouvéE '
+      no_user_found: AucunE membre correspondantE n'a été trouvéE 
       search: Rechercher ...
       search_user: Rechercher unE membre
       title: Nouveau message
@@ -1020,7 +996,7 @@ fr:
       title: Afficher le contenu du message
   messages_mailer:
     foodsoft_message:
-      footer: |-
+      footer: |
         Répondre: %{reply_url}
         Afficher ce message dans ton navigateur: %{msg_url}
         Préférences des messages: %{profile_url}
@@ -1157,8 +1133,9 @@ fr:
         title: Commentaire
       comments_link: Commenaire
       confirm_delete: Veux-tu vraiment supprimer la commande?
-      confirm_end: Veux tu vraiment terminer la commande %{order}? Pas d'annulation possible.
-      description1: Commande %{state} de %{supplier} créée par %{who}, ouverte du %{starts} au %{ends}.
+      confirm_end: |-
+        Veux tu vraiment terminer la commande %{order}? Pas d'annulation possible.
+      description1: 'Commande %{state} de %{supplier} créée par %{who}, ouverte du %{starts} au %{ends}.'
       description2: '%{ordergroups} ont commandé %{article_count} articles, pour un montant total de %{net_sum} (net)/ %{gross_sum} (brut)'
       download:
         article_pdf: Liste des articles en PDF
@@ -1188,7 +1165,7 @@ fr:
     update_order_amounts:
       msg1: '%{count} articles (%{units} unités) ont été mis à jour'
       msg2: '%{count} (%{units}) après prise en compte des tolérances'
-      msg3: 
+      msg3: '%{count} (%{units}) go to stock if foodsoft would support that [don''t translate]'
       msg4: '%{count} (%{units}) restants'
   pages:
     all:
@@ -1245,7 +1222,7 @@ fr:
     show:
       date_format: '%d.%m.%y %H:%M'
       delete: Supprimer la page
-      delete_confirm: Attention, tous les contenus seront aussi supprimés. T'es sûrE de ton coup?
+      delete_confirm: 'Attention, tous les contenus seront aussi supprimés. T''es sûrE de ton coup?'
       edit: Modifier la page
       last_updated: Dernière modification le %{when} par <b>%{user}<b>
       subpages: Sous-pages
@@ -1338,7 +1315,7 @@ fr:
         settings_group:
           messages: Messages
           privacy: Confidentialité
-    'no': Non
+    'no': 'Non'
     options:
       settings:
         profile:
@@ -1350,7 +1327,7 @@ fr:
     required:
       mark: '*'
       text: requis
-    'yes': Oui
+    'yes': 'Oui'
   stock_takings:
     create:
       notice: L'inventaire a été créé avec succès.
@@ -1364,9 +1341,7 @@ fr:
       create: ajouter
       stock_articles: Articles du cellier
       temp_inventory: l'inventaire courant
-      text_deviations: |-
-        Saisir ici les déviations constatées par rapport à %{inv_link}.
-        En cas de manque, utiliser un signe '-'.
+      text_deviations: "Saisir ici les déviations constatées par rapport à %{inv_link}.\nEn cas de manque, utiliser un signe '-'."
       text_need_articles: Si certains articles n'apparaissent pas sur l'inventaire courant, il faut les y %{create_link} directement.
       title: Inventorier le cellier
     show:
@@ -1445,10 +1420,7 @@ fr:
       title: Ajouter unE fournisseurE
     shared_supplier_note: Le/la fournisseurE a été associé a la base de données extérieure.
     shared_suppliers:
-      body: |-
-        <p>Les fournisseurEs de la base de données extérieure sont affichéEs ici.</p>
-        <p>Tu peux encore en importer des nouveaux, en t'y abonnant ci-dessous.</p>
-        <p>De cette façon, le/la fournisseurE est automatiquement ajoutéE à la base de données.</p>
+      body: "<p>Les fournisseurEs de la base de données extérieure sont affichéEs ici.</p>\n<p>Tu peux encore en importer des nouveaux, en t'y abonnant ci-dessous.</p>\n<p>De cette façon, le/la fournisseurE est automatiquement ajoutéE à la base de données.</p>"
       subscribe: s'abonner
       subscribe_again: s'abonner à nouveau
       supplier: FournisseurE
@@ -1472,10 +1444,7 @@ fr:
       notice: Le boulot a été supprimé
     edit:
       title: Modifier les données du boulot
-      warning_periodic: |-
-        <strong>Avertissement:</strong>
-        Ce boulot fait partie d'une série de boulots <em>hebdomadaires</em>.
-        Si les modifications sont enregistrées, il sera retiré de la série et converti en boulot ordinaire.
+      warning_periodic: "<strong>Avertissement:</strong>\nCe boulot fait partie d'une série de boulots <em>hebdomadaires</em>.\nSi les modifications sont enregistrées, il sera retiré de la série et converti en boulot ordinaire."
     error_not_found: Aucune équipe n'a été trouvée.
     form:
       search:
@@ -1521,7 +1490,7 @@ fr:
       notice: La description du boulot a été mise à jour.
       notice_converted: Le boulot a été converti en boulot ordinaire (sans répétition).
     user:
-      more: 'Tu t''ennuies en ce moment? Il y aura sûrement du boulot pour toi %{tasks_link}. '
+      more: Tu t'ennuies en ce moment? Il y aura sûrement du boulot pour toi %{tasks_link}. 
       tasks_link: par là-bas
       title: Ton boulot
       title_accepted: Boulots acceptés
@@ -1552,7 +1521,7 @@ fr:
     edit:
       title: Modifier l'équipe
     error_last_admin_group: Impossible de supprimer la dernière cellule avec privilèges administratrices.
-    error_last_admin_role: 'Les privilèges administratrices ne peuvent pas être retirés à la dernière cellule qui les possède. '
+    error_last_admin_role: Les privilèges administratrices ne peuvent pas être retirés à la dernière cellule qui les possède. 
     index:
       title: Équipes
     update:
