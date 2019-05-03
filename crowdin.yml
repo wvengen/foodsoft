@@ -1,0 +1,7 @@
+files:
+  - source: /config/locales/en.yml
+    translation: /config/locales/%two_letters_code%.yml
+  - source: /lib/foodsoft_wiki/config/locales/en.yml
+    translation: /lib/foodsoft_wiki/config/locales/%two_letters_code%.yml
+  - source: /lib/foodsoft_messages/config/locales/en.yml
+    translation: /lib/foodsoft_messages/config/locales/%two_letters_code%.yml
