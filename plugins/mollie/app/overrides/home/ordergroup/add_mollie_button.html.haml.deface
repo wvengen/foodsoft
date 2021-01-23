@@ -1,0 +1,7 @@
+/ insert_top '#account'
+- if FoodsoftMollie.enabled?
+  .btn-toolbar.pull-right
+    = link_to new_payments_mollie_path(return_to: my_ordergroup_path), class: "btn #{@ordergroup.account_balance < 0 ? 'btn-primary' : 'btn-default'}" do
+      = glyph :plus
+      ' 
+      = t('.credit_account')

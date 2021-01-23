@@ -1,0 +1,22 @@
+en:
+  config:
+    hints:
+      use_mollie: Let members credit their own Foodsoft ordergroup account with online payments using Mollie.
+      mollie_api_key: You find the API-Key in the Mollie Dashboard. Use the Live API-Key here (or the Test API-Key for a demo instance).
+    keys:
+      use_mollie: Online payments (Mollie)
+      mollie_api_key: Mollie API-Key
+  home:
+    ordergroup:
+      credit_account: Credit your account
+  payments:
+    mollie:
+      new:
+        title: Credit your account
+      form:
+        amount_pay: Amount to pay
+        submit: Pay online
+      controller:
+        result:
+          notice: Your account has been credited.
+          failed: Payment failed.

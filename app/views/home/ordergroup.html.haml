@@ -1,7 +1,7 @@
 - title t('.title'), false
 
 .row-fluid
-  .span4
+  .span4#side
     %h2= @ordergroup.name
     .well
       - unless @ordergroup.description.blank?
@@ -23,7 +23,7 @@
         = @ordergroup.memberships.map{|m| show_user m.user}.join(', ')
       - unless FoodsoftConfig[:disable_invite]
         = link_to t('.invite'), new_invite_path(:id => @ordergroup), :remote => true, class: 'btn btn-primary'
-  .span8
+  .span8#account
     %h2= t('.account_summary')
     .well.well-small
       = form_tag my_ordergroup_path, :method => :get, :remote => true,

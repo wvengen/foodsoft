@@ -1,0 +1,22 @@
+nl:
+  config:
+    hints:
+      use_mollie: Laat gebruikers zelf geld op de rekening van hun Foodsoft huishouden zetten met online betalingen via Mollie.
+      mollie_api_key: Vul hier de Live API-Key in, te vinden in het Mollie Dashboard (of de Test API-Key voor een Foodsoft demo).
+    keys:
+      use_mollie: Online betalingen (Mollie)
+      mollie_api_key: Mollie API-Key
+  home:
+    ordergroup:
+      credit_account: Geld storten
+  payments:
+    mollie:
+      new:
+        title: Stort geld op je account
+      form:
+        amount_pay: Te betalen bedrag
+        submit: Betaal online
+      controller:
+        result:
+          notice: Je account is opgewaardeerd.
+          failed: Betaling mislukt.
